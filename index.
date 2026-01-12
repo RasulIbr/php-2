@@ -1,0 +1,32 @@
+import sys
+
+def main():
+    try:
+        num1_str = input().strip()
+        num2_str = input().strip()
+
+        try:
+            num1 = int(num1_str)
+        except ValueError:
+            sys.stderr.write("Введите, пожалуйста, число\n")
+            return
+
+        try:
+            num2 = int(num2_str)
+        except ValueError:
+            sys.stderr.write("Введите, пожалуйста, число\n")
+            return
+
+
+        if num2 == 0:
+            sys.stderr.write("Делить на 0 нельзя\n")
+            return
+
+        result = num1 / num2
+        print(result)
+
+    except EOFError:
+        sys.stderr.write("Ошибка ввода: не удалось считать данные\n")
+
+if __name__ == "__main__":
+    main()
